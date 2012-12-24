@@ -86,8 +86,6 @@ function sendReminders () {
   if (authentication[0]){
     var lastChecked = new Number(UserProperties.getProperty('lastChecked'));
     var timeNow= new Number(Math.round(Date.now()/1000));
-    Logger.log(lastChecked);
-    Logger.log(timeNow);
     UserProperties.setProperty('lastChecked',timeNow);
     if (lastChecked != 0) {
       var items=getItemsbyLabel(n, urlStream, userAgent, authentication[1], UserProperties.getProperty('reminderLabel'), lastChecked, timeNow);
